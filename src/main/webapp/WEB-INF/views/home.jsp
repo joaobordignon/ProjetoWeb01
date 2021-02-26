@@ -4,6 +4,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Home</title>
+        <link rel="stylesheet" href="resources/css/bootstrap.min.css"/>
     </head>
     <body>
         <div class="container">
@@ -14,5 +15,8 @@
             <a href="/ProjetoWeb01/formulario-cliente" class="btn btn-light">Cadastrar Clientes</a>
             <a href="/ProjetoWeb01/listagem-clientes" class="btn btn-light">Consultar Clientes</a>
         </div>
+
+        <script src="resources/js/jquery-3.5.1.min.js"></script>
+        <script src="resources/js/bootstrap.min.js"></script>
     </body>
 </html>

@@ -1,4 +1,12 @@
 package com.projetoweb01.repositories.interfaces;
 
-public interface IBaseRepository {
+import java.util.List;
+
+public interface IBaseRepository<TEntity, TKey> {
+    void create(TEntity obj) throws Exception;
+    void update(TEntity obj) throws Exception;
+    void delete(TKey key) throws Exception;
+    List<TEntity> findAll() throws Exception;
+    TEntity findById(TKey key) throws Exception;
 }
+

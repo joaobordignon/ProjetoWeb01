@@ -6,6 +6,7 @@ import com.projetoweb01.repositories.interfaces.IClienteRepository;
 import java.sql.SQLException;
 import java.util.List;
 
+
 public class ClienteRepository implements IClienteRepository {
     @Override
     public void create(Cliente obj) throws Exception {

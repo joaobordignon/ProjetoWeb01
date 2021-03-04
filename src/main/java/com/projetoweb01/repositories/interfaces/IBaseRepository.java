@@ -2,6 +2,7 @@ package com.projetoweb01.repositories.interfaces;
 
 import java.util.List;
 
+
 public interface IBaseRepository<TEntity, TKey> {
     void create(TEntity obj) throws Exception;
     void update(TEntity obj) throws Exception;

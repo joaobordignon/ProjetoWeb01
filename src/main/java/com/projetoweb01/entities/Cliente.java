@@ -1,7 +1,13 @@
 package com.projetoweb01.entities;
 
-public class Cliente {
-    // id nome email
+import java.io.Serial;
+import java.io.Serializable;
+
+public class Cliente implements Serializable, Comparable<Cliente> {
+
+
+    @Serial
+    private static final long serialVersionUID = -7720029412767206691L;
 
     private Integer idCliente;
     private String nome;
@@ -40,4 +46,38 @@ public class Cliente {
         this.email = email;
     }
 
+    @Override
+    public String toString() {
+        return "Cliente [idCliente=" + idCliente + ", nome=" + nome + ", email=" + email + "]";
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((idCliente == null) ? 0 : idCliente.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Cliente other = (Cliente) obj;
+        if (idCliente == null) {
+            if (other.idCliente != null)
+                return false;
+        } else if (!idCliente.equals(other.idCliente))
+            return false;
+        return true;
+    }
+
+    @Override
+    public int compareTo(Cliente cliente) {
+        return this.idCliente.compareTo(cliente.getIdCliente());
+    }
 }

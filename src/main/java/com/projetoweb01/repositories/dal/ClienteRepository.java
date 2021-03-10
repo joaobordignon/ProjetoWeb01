@@ -2,9 +2,12 @@ package com.projetoweb01.repositories.dal;
 
 import com.projetoweb01.entities.Cliente;
 import com.projetoweb01.repositories.interfaces.IClienteRepository;
+import com.projetoweb01.rowMapper.ClienteRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+
 import javax.sql.DataSource;
+
 import java.sql.SQLException;
 import java.util.List;
 
@@ -34,27 +37,28 @@ public class ClienteRepository implements IClienteRepository {
     }
 
     @Override
-    public void delete(Integer i) throws Exception {
+    public void delete(Integer id) throws Exception {
         String query = "delete from Cliente where idcliente=?";
-        Object[] params = {i};
+        Object[] params = {id};
 
         jdbc.update(query,params);
     }
 
     @Override
     public List<Cliente> findAll() throws Exception {
-        return null;
-
-        // row mapper
+        String query = "select * from Clientes";
+        return jdbc.query(query, new ClienteRowMapper());
     }
 
     @Override
-    public Cliente findById(Integer integer) throws Exception {
-        return null;
+    public Cliente findById(Integer id) throws Exception {
+        String query = "Select * from Clientes where idCliente = ?";
+        return jdbc.queryForObject(query, new Object[]{id},new ClienteRowMapper());
     }
 
     @Override
     public Cliente findByEmail(String email) throws SQLException {
-        return null;
+        String query = "Select * from Clientes where email = ?";
+        return jdbc.queryForObject(query, new Object[]{email},new ClienteRowMapper());
     }
 }

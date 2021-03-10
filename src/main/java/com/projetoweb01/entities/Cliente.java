@@ -5,10 +5,8 @@ import java.io.Serializable;
 
 public class Cliente implements Serializable, Comparable<Cliente> {
 
-
     @Serial
     private static final long serialVersionUID = -7720029412767206691L;
-
     private Integer idCliente;
     private String nome;
     private String email;
@@ -46,10 +44,14 @@ public class Cliente implements Serializable, Comparable<Cliente> {
         this.email = email;
     }
 
-    @Override
+   /* @Override
     public String toString() {
-        return "Cliente [idCliente=" + idCliente + ", nome=" + nome + ", email=" + email + "]";
-    }
+        return "Cliente{" +
+                "idCliente=" + idCliente +
+                ", nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }*/
 
     @Override
     public int hashCode() {

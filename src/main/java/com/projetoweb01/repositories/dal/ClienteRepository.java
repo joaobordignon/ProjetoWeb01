@@ -27,12 +27,18 @@ public class ClienteRepository implements IClienteRepository {
 
     @Override
     public void update(Cliente obj) throws Exception {
+        String query = "update Cliente set nome=?, email=? where idcliente=?";
+        Object[] params = {obj.getNome(), obj.getEmail(), obj.getIdCliente()};
 
+        jdbc.update(query,params);
     }
 
     @Override
-    public void delete(Integer integer) throws Exception {
+    public void delete(Integer i) throws Exception {
+        String query = "delete from Cliente where idcliente=?";
+        Object[] params = {i};
 
+        jdbc.update(query,params);
     }
 
     @Override

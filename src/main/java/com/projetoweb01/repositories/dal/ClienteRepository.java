@@ -22,7 +22,7 @@ public class ClienteRepository implements IClienteRepository {
 
     @Override
     public void create(Cliente obj) throws Exception {
-        String query = "insert into Cliente(idCliente, nome, email) values (NULL,?,?)";
+        String query = "insert into Cliente values (null,?,?)";
         Object[] params = {obj.getNome(), obj.getEmail()};
 
         jdbc.update(query,params);

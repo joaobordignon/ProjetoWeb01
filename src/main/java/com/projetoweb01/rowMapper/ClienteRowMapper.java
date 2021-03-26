@@ -15,4 +15,5 @@ public class ClienteRowMapper implements RowMapper<Cliente> {
         c.setEmail(rs.getString(3));
         return c;
     }
+
 }

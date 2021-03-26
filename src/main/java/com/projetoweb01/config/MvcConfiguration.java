@@ -33,7 +33,7 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
     public DataSource getDataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/projetoweb01?useTimezone=true&serverTimezone=UTC&useSSL=false");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/projetoweb01?allowPublicKeyRetrieval=true&useTimezone=true&serverTimezone=UTC&useSSL=false");
         dataSource.setUsername("root");
         dataSource.setPassword("1510");
 
@@ -45,3 +45,6 @@ public class MvcConfiguration extends WebMvcConfigurerAdapter {
     }
 
 }
+
+
+//jdbc:mysql://localhost:3306/db?allowPublicKeyRetrieval=true&useSSL=false

@@ -6,5 +6,5 @@ import java.sql.SQLException;
 
 
 public interface IClienteRepository extends IBaseRepository<Cliente, Integer> {
-    Cliente findByEmail(String email) throws SQLException;
+    Cliente findByEmail(String email) throws SQLException, Exception;
 }
